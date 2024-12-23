@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+.insertcolour{
+  background-color:#0C3353;
+  min-height: 80px;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.applogo{
+  width: 5%;
+  height: 10%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.locationlogo{
+  width: 50Zpx;
+  height: 30px;
+  margin-top: 18PX;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex{
   display: flex;
-  flex-direction: column;
+  /* justify-content: space-between; */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+}
+.changefrontsize{
+  width: 8%;
+  margin-left: 0.5%;
+  margin-top: 1%;
+  font-style: italic;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.changeheight{
+  width: 500px;
+  height: 40px;
+  font-size: larger;
+  border: 2px solid black; 
+  border-radius: 8px;
+  margin-top: 10px;
+}
+select{
+  width: 50px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 8px;
+  /* margin-left: 25px; */
+}
+.search-button {
+  background-color: #febd69;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+}
+.sizechange{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.language-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 5%;
+}
+.changesize{
+  margin-left: 20px;
+  width: 50px;
+  height: 35px;
+}
+.d2{
+  color: white;
+  flex-direction: column;
+ display: flex;
+ margin-top: 10px;
+}
+.d3{
+  color: white;
+flex-direction: column;
+ display: flex;
+ margin-left: 100px;
+ margin-top: 10px;
+}
+.d4{
+  margin-left: 50px;
+  height: 50px;
+  margin-top: 5px;
+}
+@media(max-width:900px){
+  .flex {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  .applogo {
+    margin-bottom: 10px;
   }
 }
