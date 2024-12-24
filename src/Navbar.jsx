@@ -5,6 +5,7 @@ import location from "./location.png"
 import searchIcon from "./search.png";
 import indianflag from "./indianflag.png"
 import addchart from "./addchart.png"
+import "./NavBar.css"
 
 
 const Navbar = () => {

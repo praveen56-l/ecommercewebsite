@@ -1,30 +1,6 @@
-// import { useState, useEffect, useMemo } from "react";
-// const Categories = () => {
-//     const [apiResponse, setApiResponse] = useState([])
-//   const [filterData, setFilterData] = useState("beauty")
-
-
-//   useEffect(() => {
-//     fetch("https://dummyjson.com/products")
-//     .then(a=>a.json())
-//     .then(arr=>
-//       setApiResponse(arr)
-//     )
-// }),[]
-
-
-//   const catogeryData = useMemo(()=>{
-
-//   },[apiResponse, filterData])
-
-//   console.log("apiResponse",apiResponse)
-  
-  
-//   return <></>;
-// };
-// export default Categories;
 import { useState, useEffect, useMemo } from "react";
 import starImage from "./starImage.jpeg"
+import './Categories.css'
 
 const Categories = () => {
   const [apiResponse, setApiResponse] = useState([]);
