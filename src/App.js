@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./Navbar";
-import Categories from "./Categories";
 import Discription from './Discription';
 import Footer from './Footer';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
   return (
@@ -11,7 +11,14 @@ function App() {
       <Navbar />
       <Discription />
       <Footer/>
-      <Categories />
+      {/* <Categories /> */}
+      <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Navigation/>} />
+
+
+          </Routes>
+        </BrowserRouter>
     </>
   );
 }
