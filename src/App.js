@@ -3,12 +3,14 @@ import "./App.css";
 import Navbar from "./Navbar";
 import Categories from "./Categories";
 import Discription from './Discription';
+import Footer from './Footer';
 
 function App() {
   return (
     <>
       <Navbar />
       <Discription />
+      <Footer/>
       <Categories />
     </>
   );
