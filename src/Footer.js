@@ -1,5 +1,6 @@
 // import react from "react"
 import amazon from "./amazon.PNG"
+import "./footer.css"
 // import india from "./india.PNG"
 const Footer = () => {
      return (
@@ -77,8 +78,6 @@ const Footer = () => {
                          </div>
                          </div>
                         
-
-                         
                     </div>
                </div>
 
