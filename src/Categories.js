@@ -1,10 +1,11 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useContext } from "react";
 import starImage from "./starImage.jpeg"
-import './Categories.css'
+import './Categories1.css'
+import { ApplicationContext } from "./Context";
 
 const Categories = () => {
+  const useApplicationContext=useContext(ApplicationContext)
   const [apiResponse, setApiResponse] = useState([]);
-  const [filterData, setFilterData] = useState("beauty");
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
@@ -16,11 +17,9 @@ const Categories = () => {
 
   const categoryData = useMemo(() => {
     return apiResponse.filter((item) =>
-      item.category.toLowerCase().includes(filterData.toLowerCase())
+      item.category.toLowerCase().includes(useApplicationContext?.categoryType?.toLowerCase())
     );
-  }, [apiResponse, filterData]);
-
-  console.log("Filtered Data:", categoryData);
+  }, [apiResponse, useApplicationContext.categoryType]);
 
   return (
     <>

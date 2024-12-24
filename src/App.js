@@ -4,15 +4,20 @@ import Navbar from "./Navbar";
 import Categories from "./Categories";
 import Discription from './Discription';
 import Footer from './Footer';
+import { ApplicationContext } from "./Context";
+import { useState } from "react";
 
-function App() {
+const App=()=> {
+  const[categoryType,setCategoryType]=useState("all")
   return (
+   <ApplicationContext.Provider value={{categoryType,setCategoryType}}>
     <>
       <Navbar />
-      <Discription />
-      <Footer/>
+      {/* <Discription />
+      <Footer/> */}
       <Categories />
     </>
+    </ApplicationContext.Provider>
   );
 }
 
