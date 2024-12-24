@@ -1,11 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Categories from './Categories';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./Navbar";
+import Categories from "./Categories";
 
 function App() {
-  return <Categories/>
-   
-  
+  return (
+    <>
+      <Navbar />
+      <Categories />
+    </>
+  );
 }
 
 export default App;
