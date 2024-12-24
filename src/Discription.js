@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import star_image from "./Icons/star_image.png"
+import "./Discription.css"
+
 const Discription = () => {
     const [formdata, setformData] = useState([]);
     useEffect(() => {
