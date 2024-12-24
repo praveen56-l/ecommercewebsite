@@ -1,10 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Navbar';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./Navbar";
+import Categories from "./Categories";
 
 function App() {
-  return <Navbar/>
-
+  return (
+    <>
+      <Navbar />
+      <Categories />
+    </>
+  );
 }
 
 export default App;
