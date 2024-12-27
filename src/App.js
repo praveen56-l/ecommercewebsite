@@ -1,23 +1,21 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Navbar from "./Navbar";
-import Discription from './Discription';
-import Footer from './Footer';
-import { ApplicationContext } from "./Context";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ApplicationContext } from "./Context";
+import LandingPage from "./LandingPage";
 import Categories from "./Categories";
-const App=()=> {
-  const[categoryType,setCategoryType]=useState("all")
+const App = () => {
+  const [categoryType, setCategoryType] = useState("all")
   return (
-   <ApplicationContext.Provider value={{categoryType,setCategoryType}}>
-    <>
-      <Navbar />
-      <Discription />
-      <Footer/>
-      <Categories />
-    </>
+    <ApplicationContext.Provider value={{ categoryType, setCategoryType }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/product" element={<Categories />} />
+        </Routes>
+      </BrowserRouter>
     </ApplicationContext.Provider>
-  );
+  );  
 }
 
 export default App;

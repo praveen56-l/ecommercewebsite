@@ -7,10 +7,11 @@ import indianflag from "./Icons/indianflag.png"
 import addchart from "./Icons/addchart.png"
 import "./Navbarchange.css"
 import { ApplicationContext } from "./Context";
-
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const useApllicationContext=useContext(ApplicationContext)
+    const navigate = useNavigate
+    const {setCategoryType} = useContext(ApplicationContext)
     const [value, setValue] = useState([]);
     const [filterData, setFilterData] = useState("all");
 
@@ -25,13 +26,14 @@ const Navbar = () => {
         return arr
 
     }, [value]);
-   
-    const handleFilterData=(filterVaule)=>{
-        console.log("value", filterVaule)
-        useApllicationContext.setCategoryType(filterVaule)
+
+    const handleFilterData = (filterVaule) => {
+        setCategoryType(filterVaule)
         setFilterData(filterVaule)
+        navigate("/product")
+
     }
-    useEffect(() => {
+    useEffect(() => {   
         fetch("https://dummyjson.com/products")
             .then((a) => a.json())
             .then((data) => {
@@ -47,7 +49,10 @@ const Navbar = () => {
                     <img src={location} alt="location" className="locationlogo" />
                     <div className="changefrontsize">Deliver to Tiruppur 641604</div>
                     <div>
-                        <select value={filterData}onChange={(e) => handleFilterData(e.target.value)} >
+                        <select value={filterData} onChange={(e) => {
+                            handleFilterData(e.target.value)
+
+                        }} >
                             <option>All Categories</option>
                             {categoryData.map((category, index) => (
                                 <option key={index} value={category}>
@@ -87,7 +92,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            
+
 
         </>
     )
