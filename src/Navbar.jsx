@@ -30,7 +30,7 @@ const Navbar = () => {
     const handleFilterData = (filterVaule) => {
         setCategoryType(filterVaule)
         setFilterData(filterVaule)
-        navigate("/product")
+        // navigate("/product")
 
     }
     useEffect(() => {   
