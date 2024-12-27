@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useContext } from "react";
 import React from "react"
 import logo from "./Icons/logo.png"
 import location from "./Icons/location.png"
@@ -6,11 +6,14 @@ import searchIcon from "./Icons/search.png";
 import indianflag from "./Icons/indianflag.png"
 import addchart from "./Icons/addchart.png"
 import "./Navbarchange.css"
+import { ApplicationContext } from "./Context";
 
 
 const Navbar = () => {
+    const useApllicationContext=useContext(ApplicationContext)
     const [value, setValue] = useState([]);
     const [filterData, setFilterData] = useState("all");
+
 
     const categoryData = useMemo(() => {
         let arr = []
@@ -23,6 +26,11 @@ const Navbar = () => {
 
     }, [value]);
    
+    const handleFilterData=(filterVaule)=>{
+        console.log("value", filterVaule)
+        useApllicationContext.setCategoryType(filterVaule)
+        setFilterData(filterVaule)
+    }
     useEffect(() => {
         fetch("https://dummyjson.com/products")
             .then((a) => a.json())
@@ -39,8 +47,8 @@ const Navbar = () => {
                     <img src={location} alt="location" className="locationlogo" />
                     <div className="changefrontsize">Deliver to Tiruppur 641604</div>
                     <div>
-                        <select value={filterData}onChange={(e) => setFilterData(e.target.value)} >
-                            <option>All</option>
+                        <select value={filterData}onChange={(e) => handleFilterData(e.target.value)} >
+                            <option>All Categories</option>
                             {categoryData.map((category, index) => (
                                 <option key={index} value={category}>
                                     {category}
