@@ -47,7 +47,7 @@ const Navbar = () => {
                     <img src={location} alt="location" className="locationlogo" />
                     <div className="changefrontsize">Deliver to Tiruppur 641604</div>
                     <div>
-                        <select value={filterData}onChange={(e) => setFilterData(e.target.value)} >
+                        <select value={filterData}onChange={(e) => handleFilterData(e.target.value)} >
                             <option>All Categories</option>
                             {categoryData.map((category, index) => (
                                 <option key={index} value={category}>

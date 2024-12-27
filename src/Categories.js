@@ -16,10 +16,16 @@ const Categories = () => {
   }, []);
 
   const categoryData = useMemo(() => {
-    return apiResponse.filter((item) =>
-      item.category.toLowerCase().includes(useApplicationContext?.categoryType?.toLowerCase())
-    );
+    if(useApplicationContext?.categoryType?.toLowerCase() !== "all") {
+      return apiResponse.filter((item) =>
+        item.category.toLowerCase().includes(useApplicationContext?.categoryType?.toLowerCase())
+      );
+    } else {
+      return apiResponse
+    }
+    
   }, [apiResponse, useApplicationContext.categoryType]);
+  console.log("useApplicationContext",useApplicationContext)
 
   return (
     <>
